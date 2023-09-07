@@ -5,13 +5,13 @@ Future initFirebase() async {
   if (kIsWeb) {
     await Firebase.initializeApp(
         options: FirebaseOptions(
-            apiKey: "AIzaSyCqnSxQgXKhdaBq8dU4rU5L1EnYA-4JkIA",
-            authDomain: "learning-flutter-98f05.firebaseapp.com",
-            projectId: "learning-flutter-98f05",
-            storageBucket: "learning-flutter-98f05.appspot.com",
-            messagingSenderId: "467655263217",
-            appId: "1:467655263217:web:6d8af423f74bb43050fa50",
-            measurementId: "G-GEPYV2068S"));
+            apiKey: "AIzaSyCAuQ_ncdHLSrJWZ7j6ESMZM5_fsqlwC64",
+            authDomain: "uitm-eats.firebaseapp.com",
+            projectId: "uitm-eats",
+            storageBucket: "uitm-eats.appspot.com",
+            messagingSenderId: "1013957656747",
+            appId: "1:1013957656747:web:3d951fb048a21d60d8f7ee",
+            measurementId: "G-54GHTZJ0D0"));
   } else {
     await Firebase.initializeApp();
   }

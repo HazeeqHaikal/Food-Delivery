@@ -39,7 +39,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(30.0, 0.0),
+          begin: Offset(0.0, 30.0),
           end: Offset(0.0, 0.0),
         ),
       ],
@@ -58,69 +58,12 @@ class _HomePageWidgetState extends State<HomePageWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(30.0, 0.0),
-          end: Offset(0.0, 0.0),
-        ),
-      ],
-    ),
-    'containerOnPageLoadAnimation3': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: Offset(30.0, 0.0),
-          end: Offset(0.0, 0.0),
-        ),
-      ],
-    ),
-    'containerOnPageLoadAnimation4': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: Offset(0.0, 30.0),
-          end: Offset(0.0, 0.0),
-        ),
-      ],
-    ),
-    'containerOnPageLoadAnimation5': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
           begin: Offset(0.0, 40.0),
           end: Offset(0.0, 0.0),
         ),
       ],
     ),
-    'containerOnPageLoadAnimation6': AnimationInfo(
+    'containerOnPageLoadAnimation3': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
         FadeEffect(
@@ -180,9 +123,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 60.0, 16.0, 12.0),
+                padding: EdgeInsetsDirectional.fromSTEB(12.0, 60.0, 12.0, 12.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -193,82 +138,106 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       child: Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(2.0, 2.0, 2.0, 2.0),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(40.0),
-                          child: Image.network(
-                            'https://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1.jpg',
-                            width: 40.0,
-                            height: 40.0,
-                            fit: BoxFit.cover,
+                        child: AuthUserStreamWidget(
+                          builder: (context) => InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed('settingaccount');
+                            },
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(40.0),
+                              child: Image.network(
+                                currentUserPhoto,
+                                width: 40.0,
+                                height: 40.0,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
                           ),
                         ),
                       ),
                     ),
-                    Flexible(
-                      child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            AuthUserStreamWidget(
-                              builder: (context) => Text(
-                                currentUserDisplayName.maybeHandleOverflow(
-                                  maxChars: 15,
-                                  replacement: '…',
+                    Align(
+                      alignment: AlignmentDirectional(-1.0, 0.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                10.0, 0.0, 0.0, 0.0),
+                            child: AuthUserStreamWidget(
+                              builder: (context) => InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed('settingaccount');
+                                },
+                                child: Text(
+                                  currentUserDisplayName.maybeHandleOverflow(
+                                    maxChars: 15,
+                                    replacement: '…',
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleLarge
+                                      .override(
+                                        fontFamily: 'Plus Jakarta Sans',
+                                        color: Color(0xFF0F1113),
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.w500,
+                                      ),
                                 ),
-                                style: FlutterFlowTheme.of(context)
-                                    .titleLarge
-                                    .override(
-                                      fontFamily: 'Plus Jakarta Sans',
-                                      color: Color(0xFF0F1113),
-                                      fontSize: 16.0,
-                                      fontWeight: FontWeight.w500,
-                                    ),
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
-                    Align(
-                      alignment: AlignmentDirectional(1.0, 0.0),
-                      child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            60.0, 10.0, 10.0, 10.0),
-                        child: FFButtonWidget(
-                          onPressed: () async {
-                            GoRouter.of(context).prepareAuthEvent();
-                            await authManager.signOut();
-                            GoRouter.of(context).clearRedirectLocation();
+                    Flexible(
+                      child: Align(
+                        alignment: AlignmentDirectional(1.0, 0.0),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              10.0, 10.0, 10.0, 10.0),
+                          child: FFButtonWidget(
+                            onPressed: () async {
+                              GoRouter.of(context).prepareAuthEvent();
+                              await authManager.signOut();
+                              GoRouter.of(context).clearRedirectLocation();
 
-                            context.pushNamedAuth(
-                                'LoginSignup', context.mounted);
-                          },
-                          text: 'Log Out',
-                          options: FFButtonOptions(
-                            height: 40.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                24.0, 0.0, 24.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: Color(0xFF2EC7B9),
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: 'Readex Pro',
-                                  color: Colors.white,
-                                  fontSize: 10.0,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                            elevation: 3.0,
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-                              width: 1.0,
+                              context.pushNamedAuth(
+                                  'LoginSignup', context.mounted);
+                            },
+                            text: 'Log Out',
+                            options: FFButtonOptions(
+                              height: 40.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  24.0, 0.0, 24.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: Color(0xFF2EC7B9),
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    color: Colors.white,
+                                    fontSize: 10.0,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                              elevation: 4.0,
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+                                width: 1.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                              hoverColor: Color(0xD535A398),
                             ),
-                            borderRadius: BorderRadius.circular(8.0),
-                            hoverColor: Color(0xD535A398),
                           ),
                         ),
                       ),
@@ -299,13 +268,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       controller: _model.textController,
                       obscureText: false,
                       decoration: InputDecoration(
-                        labelText: 'Find your food...',
-                        labelStyle:
-                            FlutterFlowTheme.of(context).labelLarge.override(
-                                  fontFamily: 'Plus Jakarta Sans',
-                                  color: Color(0xFF57636C),
+                        hintText: 'Find your food',
+                        hintStyle:
+                            FlutterFlowTheme.of(context).labelSmall.override(
+                                  fontFamily: 'Readex Pro',
                                   fontSize: 16.0,
-                                  fontWeight: FontWeight.w500,
                                 ),
                         enabledBorder: InputBorder.none,
                         focusedBorder: InputBorder.none,
@@ -333,312 +300,6 @@ class _HomePageWidgetState extends State<HomePageWidget>
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
                 child: Text(
-                  'Categories',
-                  style: FlutterFlowTheme.of(context).headlineSmall.override(
-                        fontFamily: 'Outfit',
-                        color: Color(0xFF0F1113),
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.normal,
-                      ),
-                ),
-              ),
-              Container(
-                width: double.infinity,
-                height: 197.0,
-                decoration: BoxDecoration(
-                  color: Color(0xFFF1F5F8),
-                ),
-                child: ListView(
-                  padding: EdgeInsets.zero,
-                  primary: false,
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
-                          16.0, 12.0, 12.0, 20.0),
-                      child: Container(
-                        width: 165.0,
-                        height: 50.0,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(
-                              blurRadius: 4.0,
-                              color: Color(0x34090F13),
-                              offset: Offset(0.0, 2.0),
-                            )
-                          ],
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 20.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Container(
-                                width: double.infinity,
-                                height: 117.0,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFF2EC7B9),
-                                  borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(0.0),
-                                    bottomRight: Radius.circular(0.0),
-                                    topLeft: Radius.circular(12.0),
-                                    topRight: Radius.circular(12.0),
-                                  ),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 12.0, 12.0, 12.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                        width: 36.0,
-                                        height: 36.0,
-                                        decoration: BoxDecoration(
-                                          color: Color(0x98FFFFFF),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        alignment:
-                                            AlignmentDirectional(0.0, 0.0),
-                                        child: Icon(
-                                          Icons.desktop_windows,
-                                          color: Colors.white,
-                                          size: 20.0,
-                                        ),
-                                      ),
-                                      Text(
-                                        'Breakfast',
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleMedium
-                                            .override(
-                                              fontFamily: 'Outfit',
-                                              color: Colors.white,
-                                              fontSize: 18.0,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                      ),
-                                      Text(
-                                        '12 Stalls',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Plus Jakarta Sans',
-                                              color: Colors.white,
-                                              fontSize: 14.0,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ).animateOnPageLoad(
-                          animationsMap['containerOnPageLoadAnimation1']!),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
-                          16.0, 12.0, 12.0, 20.0),
-                      child: Container(
-                        width: 165.0,
-                        height: 50.0,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(
-                              blurRadius: 4.0,
-                              color: Color(0x34090F13),
-                              offset: Offset(0.0, 2.0),
-                            )
-                          ],
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 20.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Container(
-                                width: double.infinity,
-                                height: 117.0,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFF2EC7B9),
-                                  borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(0.0),
-                                    bottomRight: Radius.circular(0.0),
-                                    topLeft: Radius.circular(12.0),
-                                    topRight: Radius.circular(12.0),
-                                  ),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 12.0, 12.0, 12.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                        width: 36.0,
-                                        height: 36.0,
-                                        decoration: BoxDecoration(
-                                          color: Color(0x98FFFFFF),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        alignment:
-                                            AlignmentDirectional(0.0, 0.0),
-                                        child: Icon(
-                                          Icons.desktop_windows,
-                                          color: Colors.white,
-                                          size: 20.0,
-                                        ),
-                                      ),
-                                      Text(
-                                        'Lunch',
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleMedium
-                                            .override(
-                                              fontFamily: 'Outfit',
-                                              color: Colors.white,
-                                              fontSize: 18.0,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                      ),
-                                      Text(
-                                        '4 Stalls',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Plus Jakarta Sans',
-                                              color: Colors.white,
-                                              fontSize: 14.0,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ).animateOnPageLoad(
-                          animationsMap['containerOnPageLoadAnimation2']!),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
-                          16.0, 12.0, 12.0, 20.0),
-                      child: Container(
-                        width: 165.0,
-                        height: 50.0,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(
-                              blurRadius: 4.0,
-                              color: Color(0x34090F13),
-                              offset: Offset(0.0, 2.0),
-                            )
-                          ],
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 20.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Container(
-                                width: double.infinity,
-                                height: 117.0,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFF81E1D7),
-                                  borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(0.0),
-                                    bottomRight: Radius.circular(0.0),
-                                    topLeft: Radius.circular(12.0),
-                                    topRight: Radius.circular(12.0),
-                                  ),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 12.0, 12.0, 12.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                        width: 36.0,
-                                        height: 36.0,
-                                        decoration: BoxDecoration(
-                                          color: Color(0x98FFFFFF),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        alignment:
-                                            AlignmentDirectional(0.0, 0.0),
-                                        child: Icon(
-                                          Icons.desktop_windows,
-                                          color: Colors.white,
-                                          size: 20.0,
-                                        ),
-                                      ),
-                                      Text(
-                                        'Dinner',
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleMedium
-                                            .override(
-                                              fontFamily: 'Outfit',
-                                              color: Colors.white,
-                                              fontSize: 18.0,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                      ),
-                                      Text(
-                                        '4 Stalls',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Plus Jakarta Sans',
-                                              color: Colors.white,
-                                              fontSize: 14.0,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ).animateOnPageLoad(
-                          animationsMap['containerOnPageLoadAnimation3']!),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
-                child: Text(
                   'Foods & Drinks',
                   style: FlutterFlowTheme.of(context).headlineSmall.override(
                         fontFamily: 'Outfit',
@@ -652,7 +313,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                 child: Container(
                   width: double.infinity,
-                  height: 400.0,
+                  height: 600.0,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     boxShadow: [
@@ -860,7 +521,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           ),
                                         ),
                                       ).animateOnPageLoad(animationsMap[
-                                          'containerOnPageLoadAnimation4']!),
+                                          'containerOnPageLoadAnimation1']!),
                                     ),
                                     Container(
                                       width: double.infinity,
@@ -995,7 +656,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         ),
                                       ),
                                     ).animateOnPageLoad(animationsMap[
-                                        'containerOnPageLoadAnimation5']!),
+                                        'containerOnPageLoadAnimation2']!),
                                     Container(
                                       width: double.infinity,
                                       decoration: BoxDecoration(
@@ -1129,7 +790,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         ),
                                       ),
                                     ).animateOnPageLoad(animationsMap[
-                                        'containerOnPageLoadAnimation6']!),
+                                        'containerOnPageLoadAnimation3']!),
                                   ],
                                 ),
                               ),

@@ -21,41 +21,42 @@ class LoginSignupModel extends FlutterFlowModel {
   int get tabBarCurrentIndex =>
       tabBarController != null ? tabBarController!.index : 0;
 
-  // State field(s) for emailAddress widget.
-  TextEditingController? emailAddressController1;
-  String? Function(BuildContext, String?)? emailAddressController1Validator;
-  // State field(s) for password widget.
-  TextEditingController? passwordController1;
-  late bool passwordVisibility1;
-  String? Function(BuildContext, String?)? passwordController1Validator;
-  // State field(s) for passwordConfirm widget.
-  TextEditingController? passwordConfirmController;
-  late bool passwordConfirmVisibility;
-  String? Function(BuildContext, String?)? passwordConfirmControllerValidator;
-  // State field(s) for emailAddress widget.
-  TextEditingController? emailAddressController2;
-  String? Function(BuildContext, String?)? emailAddressController2Validator;
-  // State field(s) for password widget.
-  TextEditingController? passwordController2;
-  late bool passwordVisibility2;
-  String? Function(BuildContext, String?)? passwordController2Validator;
+  // State field(s) for login_Email widget.
+  TextEditingController? loginEmailController;
+  String? Function(BuildContext, String?)? loginEmailControllerValidator;
+  // State field(s) for login_password widget.
+  TextEditingController? loginPasswordController;
+  late bool loginPasswordVisibility;
+  String? Function(BuildContext, String?)? loginPasswordControllerValidator;
+  // State field(s) for register_email widget.
+  TextEditingController? registerEmailController;
+  String? Function(BuildContext, String?)? registerEmailControllerValidator;
+  // State field(s) for register_password widget.
+  TextEditingController? registerPasswordController;
+  late bool registerPasswordVisibility;
+  String? Function(BuildContext, String?)? registerPasswordControllerValidator;
+  // State field(s) for register_password_confirm widget.
+  TextEditingController? registerPasswordConfirmController;
+  late bool registerPasswordConfirmVisibility;
+  String? Function(BuildContext, String?)?
+      registerPasswordConfirmControllerValidator;
 
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {
-    passwordVisibility1 = false;
-    passwordConfirmVisibility = false;
-    passwordVisibility2 = false;
+    loginPasswordVisibility = false;
+    registerPasswordVisibility = false;
+    registerPasswordConfirmVisibility = false;
   }
 
   void dispose() {
     unfocusNode.dispose();
     tabBarController?.dispose();
-    emailAddressController1?.dispose();
-    passwordController1?.dispose();
-    passwordConfirmController?.dispose();
-    emailAddressController2?.dispose();
-    passwordController2?.dispose();
+    loginEmailController?.dispose();
+    loginPasswordController?.dispose();
+    registerEmailController?.dispose();
+    registerPasswordController?.dispose();
+    registerPasswordConfirmController?.dispose();
   }
 
   /// Action blocks are added here.

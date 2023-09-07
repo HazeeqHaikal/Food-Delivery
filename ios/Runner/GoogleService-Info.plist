@@ -3,23 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>467655263217-afjg1nu3vogpfnp18dvgh05g7ei46e6u.apps.googleusercontent.com</string>
+	<string>1013957656747-ftejjpma276saeolqha7l52bvfl5otvd.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.467655263217-afjg1nu3vogpfnp18dvgh05g7ei46e6u</string>
+	<string>com.googleusercontent.apps.1013957656747-ftejjpma276saeolqha7l52bvfl5otvd</string>
 	<key>ANDROID_CLIENT_ID</key>
-	<string>467655263217-3pr0nja8qudj1qgu1hd51brtojqo5sde.apps.googleusercontent.com</string>
+	<string>1013957656747-oa71brudkog4gjga2gskii3ts0pp6sdm.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDqyuPZX-dUWnvrIAFZr1DQsWp2RbUZZkE</string>
+	<string>AIzaSyCddOcCLmWNtNXMJNNZYh0tw5xWkB989b0</string>
 	<key>GCM_SENDER_ID</key>
-	<string>467655263217</string>
+	<string>1013957656747</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.mycompany.learningflutter</string>
+	<string>com.mycompan.uitmeats</string>
 	<key>PROJECT_ID</key>
-	<string>learning-flutter-98f05</string>
+	<string>uitm-eats</string>
 	<key>STORAGE_BUCKET</key>
-	<string>learning-flutter-98f05.appspot.com</string>
+	<string>uitm-eats.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:467655263217:ios:4db1618868221a4150fa50</string>
+	<string>1:1013957656747:ios:aa97c31482491670d8f7ee</string>
 </dict>
 </plist>

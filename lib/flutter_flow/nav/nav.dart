@@ -98,9 +98,29 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => HomePageWidget(),
         ),
         FFRoute(
-          name: 'HomePageCopy',
-          path: '/homePageCopy',
-          builder: (context, params) => HomePageCopyWidget(),
+          name: 'settingaccount',
+          path: '/settingaccount',
+          builder: (context, params) => SettingaccountWidget(),
+        ),
+        FFRoute(
+          name: 'profile',
+          path: '/profile',
+          builder: (context, params) => ProfileWidget(),
+        ),
+        FFRoute(
+          name: 'notificationPage',
+          path: '/notificationPage',
+          builder: (context, params) => NotificationPageWidget(),
+        ),
+        FFRoute(
+          name: 'editProfile',
+          path: '/editProfile',
+          builder: (context, params) => EditProfileWidget(),
+        ),
+        FFRoute(
+          name: 'PaymentPage',
+          path: '/paymentPage',
+          builder: (context, params) => PaymentPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

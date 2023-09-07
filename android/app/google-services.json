@@ -1,45 +1,45 @@
 {
   "project_info": {
-    "project_number": "467655263217",
-    "project_id": "learning-flutter-98f05",
-    "storage_bucket": "learning-flutter-98f05.appspot.com"
+    "project_number": "1013957656747",
+    "project_id": "uitm-eats",
+    "storage_bucket": "uitm-eats.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:467655263217:android:2d55644d6156c14250fa50",
+        "mobilesdk_app_id": "1:1013957656747:android:7a7cf9b9c897d595d8f7ee",
         "android_client_info": {
-          "package_name": "com.mycompany.learningflutter"
+          "package_name": "com.mycompan.uitmeats"
         }
       },
       "oauth_client": [
         {
-          "client_id": "467655263217-3pr0nja8qudj1qgu1hd51brtojqo5sde.apps.googleusercontent.com",
+          "client_id": "1013957656747-oa71brudkog4gjga2gskii3ts0pp6sdm.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.mycompany.learningflutter",
-            "certificate_hash": "492a0a7e1aacdf1614eeebf0eeda8d26291f271e"
+            "package_name": "com.mycompan.uitmeats",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
           }
         },
         {
-          "client_id": "467655263217-3gqmr98n7jd44li3tihgo5hht4a19pqs.apps.googleusercontent.com",
+          "client_id": "1013957656747-s3fp0m861d9jsfai9qk17blqa07n4qga.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBsO9D08pLOYitcocg4Yv5V3iYCoaOgPCw"
+          "current_key": "AIzaSyDb0T2ktxBqmYk3OPBERV8uYeH5wmntUYg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "467655263217-3gqmr98n7jd44li3tihgo5hht4a19pqs.apps.googleusercontent.com",
+              "client_id": "1013957656747-njd0s30mfja69hgrt01bfg1jdsdfqoca.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "467655263217-afjg1nu3vogpfnp18dvgh05g7ei46e6u.apps.googleusercontent.com",
+              "client_id": "1013957656747-ca9mkuu2c7q6ivl45mlkv4edrakv4hie.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "com.mycompany.learningflutter"
